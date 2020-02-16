@@ -1,6 +1,5 @@
 <html>
   <head>
-    <title>Sign In Page</title>
     <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-firestore.js"></script>
@@ -16,7 +15,9 @@
         Password
         <input id="password" type="password" />
       </p>
-      <button onclick="signUp();">Sign Up</button>
+      <p>
+        <button onclick="signUp();">Sign Up</button>
+      </p>
       <h2>Sign into Already Existing Account</h2>
       <p>
         Email Address
@@ -32,7 +33,9 @@
     </div>
     <div id="logged-in">
       <p id="greeting"></p>
-      <button onclick="signOut();">Sign Out</button>
+      <p>
+        <button onclick="signOut();">Sign Out</button>
+      </p>
     </div>
     <script>
       var firebaseConfig = {

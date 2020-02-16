@@ -1,16 +1,33 @@
-<h1> Your Parties </h1> <h3> <a href="Homepage.html"> Back to Home </a> </h3>
-<p>
-  Name of New Party
-  <input id="Name-Of-Party" type="list" />
-</p>
-<label for="cars">Choose One of your Parties:</label>
+<html>
+  <head>
+    <h1> Your Parties </h1> <h3> <a href="Homepage.html"> Back to Home </a> </h3>
+  </head>
+  <body>
+    <p>
+      Name of New Party
+      <input id="Name-Of-Party" type="list" />
+    </p>
+    <label for="cars">Choose One of your Parties:</label>
 
-<select id="cars">
-  <option value="volvo">Party #1</option>
-  <option value="saab">Party #2</option>
-  <option value="opel">Party #3</option>
-  <option value="audi">Party #4</option>
-</select>
+    <select id="cars">
+      <option value="volvo">Party #1</option>
+      <option value="saab">Party #2</option>
+      <option value="opel">Party #3</option>
+      <option value="audi">Party #4</option>
+    </select>
 
-</body>
+  </body>
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyB_Jel93p7tJz9Ay4LUKWf0lPhbu3cwwRI",
+      authDomain: "e-vent-4c051.firebaseapp.com",
+      databaseURL: "https://e-vent-4c051.firebaseio.com",
+      projectId: "e-vent-4c051",
+      storageBucket: "e-vent-4c051.appspot.com",
+      messagingSenderId: "336176879404",
+      appId: "1:336176879404:web:4b3080f52f9adb4d0f7e89"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
 </html>

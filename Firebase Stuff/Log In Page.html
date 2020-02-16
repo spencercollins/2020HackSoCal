@@ -19,7 +19,7 @@
       <input id="password" type="password" />
     </p>
     <p>
-      <button onclick="signUp();">Sign Up</button>
+      <button onclick="signUp(); uploadName();">Sign Up</button>
     </p>
     <h2>Sign into Already Existing Account</h2>
     <p>
@@ -33,7 +33,7 @@
     <p>
       <button onclick="signIn();">Sign In</button>
     </p>
-    printName();
+
     <script>
       var firebaseConfig = {
         apiKey: "AIzaSyB_Jel93p7tJz9Ay4LUKWf0lPhbu3cwwRI",
@@ -50,9 +50,14 @@
       function signUp() {
         let email = document.getElementById('email-address').value;
         let password = document.getElementById('password').value;
-        let userName = document.getElementById('first-name').value;
 
         firebase.auth().createUserWithEmailAndPassword(email, password);
+      }
+      function uploadName(){
+        let element = document.getElementById('first-name').value;
+        firebase.firestore().collection('name').add({
+          name.value;
+        })
       }
 
       function signIn() {
@@ -60,12 +65,6 @@
         let password = document.getElementById('password-sign-in').value;
 
         firebase.auth().signInUserWithEmailAndPassword(email, password);
-      }
-      function uploadData(){
-        let element = document.getElementById( 'input' ).value;
-        firebase.firestore().collection('userName').add({
-          text: value,
-        });
       }
       function redirectHome() {
 

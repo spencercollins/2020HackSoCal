@@ -1,19 +1,21 @@
 <html>
   <head>
     <h1> Your Parties </h1> <h3> <a href="Homepage.html"> Back to Home </a> </h3>
+
+    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-firestore.js"></script>
   </head>
   <body>
     <p>
       Name of New Party
       <input id="Name-Of-Party" type="list" />
+      <button onclick="submit();">Submit</button>
     </p>
-    <label for="cars">Choose One of your Parties:</label>
+    <label for="parties">Choose One of your Parties:</label>
 
-    <select id="cars">
-      <option value="volvo">Party #1</option>
-      <option value="saab">Party #2</option>
-      <option value="opel">Party #3</option>
-      <option value="audi">Party #4</option>
+    <select id="parties">
+
     </select>
 
   </body>
@@ -29,5 +31,24 @@
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
+
+    function submit() {
+      let value = document.getElementById('Name-Of-Party').value;
+
+      // firebase.auth().currentUser.uid
+      firebase.firestore().collection('users').doc('Wc8utWunvKReea6t3rfQaoRvkwC3').collection('parties').doc(value).set({
+        users: [],
+      });
+    }
+
+    firebase.firestore().collection('users').doc('Wc8utWunvKReea6t3rfQaoRvkwC3').collection('parties').get().then((snapshot) => {
+      let newOptions = '';
+
+      snapshot.forEach(function (doc) {
+        newOptions += '<option value="' + doc.id + '">' + doc.id + '</option>';
+      });
+
+      document.getElementById('parties').innerHTML = newOptions;
+    });
   </script>
 </html>

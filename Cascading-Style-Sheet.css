@@ -19,3 +19,6 @@ head {
   font-size: 100;
   color: blue;
 }
+.hidden {
+  display: none;
+}

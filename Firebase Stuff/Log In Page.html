@@ -5,39 +5,35 @@
     <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-firestore.js"></script>
   </head>
   <body>
-    <div id="logged-out">
-      <h2>Create an Account</h2>
-      <p>
-        Email Address
-        <input id="email-address" type="email" />
-      </p>
-      <p>
-        First Name
-        <input id="first-name" type="userName" />
-      </p>
-      <p>
-        Password
-        <input id="password" type="password" />
-      </p>
-      <p>
-        <button onclick="signUp();">Sign Up</button>
-      </p>
-      <h2>Sign into Already Existing Account</h2>
-      <p>
-        Email Address
-        <input id="email-address-sign-in" type="email" />
-      </p>
-      <p>
-        Password
-        <input id="password-sign-in" type="password" />
-      </p>
-      <p>
-        <button onclick="signIn();">Sign In</button>
-      </p>
-    </div>
-    <div id="logged-in">
-      <p id="greeting"></p>
-    </div>
+    <h2>Create an Account</h2>
+    <p>
+      Email Address
+      <input id="email-address" type="email" />
+    </p>
+    <p>
+      First Name
+      <input id="first-name" type="userName" />
+    </p>
+    <p>
+      Password
+      <input id="password" type="password" />
+    </p>
+    <p>
+      <button onclick="signUp();">Sign Up</button>
+    </p>
+    <h2>Sign into Already Existing Account</h2>
+    <p>
+      Email Address
+      <input id="email-address-sign-in" type="email" />
+    </p>
+    <p>
+      Password
+      <input id="password-sign-in" type="password" />
+    </p>
+    <p>
+      <button onclick="signIn();">Sign In</button>
+    </p>
+    printName();
     <script>
       var firebaseConfig = {
         apiKey: "AIzaSyB_Jel93p7tJz9Ay4LUKWf0lPhbu3cwwRI",
@@ -71,7 +67,6 @@
           text: value,
         });
       }
-
       function redirectHome() {
 
       }

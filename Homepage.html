@@ -11,9 +11,8 @@
   <h2> <a href="Log In Page.html"> Log In! </a> </h2>
 </head>
 <body>
-  <h2> Hello </h2>
   <p>
-    <button onclick="signOut();">Sign Out</button>
+    <button onclick="signOut();" class="hidden" id="go-to-button">Sign Out</button>
   </p>
 </body>
 <script>
@@ -26,6 +25,16 @@ var firebaseConfig = {
   messagingSenderId: "336176879404",
   appId: "1:336176879404:web:4b3080f52f9adb4d0f7e89"
 };
+firebase.initializeApp(firebaseConfig);
+
+firebase.auth().onAuthStateChanged(function (user) {
+  console.log('Homepage', user)
+    if (user) {
+      document.getElementById('go-to-button').className = '';
+    } else {
+      document.getElementById('go-to-button').className = 'hidden';
+    }
+})
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 function signOut() {

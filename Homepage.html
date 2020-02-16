@@ -25,7 +25,10 @@ var firebaseConfig = {
   messagingSenderId: "336176879404",
   appId: "1:336176879404:web:4b3080f52f9adb4d0f7e89"
 };
+firebase.initializeApp(firebaseConfig);
+
 firebase.auth().onAuthStateChanged(function (user) {
+  console.log('Homepage', user)
     if (user) {
       document.getElementById('go-to-button').className = '';
     } else {

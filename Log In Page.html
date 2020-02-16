@@ -37,6 +37,9 @@
     <p>
       <button onclick="goToHomepage();" class="hidden" id="go-to-button">Go To Homepage</button>
     </p>
+    <p>
+      <button onclick="signOut();">Sign Out</button>
+    </p>
     <script>
       var firebaseConfig = {
         apiKey: "AIzaSyB_Jel93p7tJz9Ay4LUKWf0lPhbu3cwwRI",
@@ -62,12 +65,8 @@
         window.location.href = './Homepage.html';
       }
 
-      <p>
-        <button onclick="signOut();">Sign Out</button>
-      </p>
-
       function signOut() {
-      firebase.signOut(): promise<void>
+        firebase.auth().signOut();
       }
 
       function signUp() {

@@ -54,6 +54,14 @@
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
 
+      firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+          // User is signed in.
+        } else {
+          // User is signed out.
+        }
+      });
+
       firebase.auth().onAuthStateChanged(function (user) {
           if (user) {
             document.getElementById('go-to-button').className = '';
@@ -69,32 +77,13 @@
       function signOut() {
         firebase.auth().signOut();
       }
-
-      // function signUp() {
-      //   let email = document.getElementById('email-address').value;
-      //   let password = document.getElementById('password').value;
-      //
-      //   console.log(email, password)
-      //   firebase.auth().createUserWithEmailAndPassword(email, password).then(function (user) {
-      //     uploadName(user.user.uid);
-      //   });
-      // }
-      // function uploadName(uid){
-      //   let element = document.getElementById('first-name');
-      //   firebase.firestore().collection('users').doc(uid).set({
-      //     name: element.value
-      //   })
-      // }
-
+      console.log(firebase.auth().currentUser);
       function signIn() {
         let email = document.getElementById('email-address-sign-in').value;
         let password = document.getElementById('password-sign-in').value;
 
         console.log(email, password);
         firebase.auth().signInWithEmailAndPassword(email, password);
-      }
-      function redirectHome() {
-
       }
     </script>
   </body>

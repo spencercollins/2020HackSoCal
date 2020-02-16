@@ -21,35 +21,6 @@
   </body>
   <link href="Cascading-Style-Sheet.css" rel="stylesheet" type="text/css">
   <script>
-    var firebaseConfig = {
-      apiKey: "AIzaSyB_Jel93p7tJz9Ay4LUKWf0lPhbu3cwwRI",
-      authDomain: "e-vent-4c051.firebaseapp.com",
-      databaseURL: "https://e-vent-4c051.firebaseio.com",
-      projectId: "e-vent-4c051",
-      storageBucket: "e-vent-4c051.appspot.com",
-      messagingSenderId: "336176879404",
-      appId: "1:336176879404:web:4b3080f52f9adb4d0f7e89"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-
-    function submit() {
-      let value = document.getElementById('Name-Of-Party').value;
-
-      // firebase.auth().currentUser.uid
-      firebase.firestore().collection('users').doc('Wc8utWunvKReea6t3rfQaoRvkwC3').collection('parties').doc(value).set({
-        users: [],
-      });
-    }
-
-    firebase.firestore().collection('users').doc('Wc8utWunvKReea6t3rfQaoRvkwC3').collection('parties').get().then((snapshot) => {
-      let newOptions = '';
-
-      snapshot.forEach(function (doc) {
-        newOptions += '<option value="' + doc.id + '">' + doc.id + '</option>';
-      });
-
-      document.getElementById('parties').innerHTML = newOptions;
-    });
+    
   </script>
 </html>

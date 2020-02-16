@@ -11,6 +11,9 @@ h2 {
   font-size: 40;
   color: blue;
 }
+  a{
+  color: yellow;
+}
 head {
   text-align: center;
   font-size: 100;

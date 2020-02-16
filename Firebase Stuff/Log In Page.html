@@ -12,6 +12,10 @@
         <input id="email-address" type="email" />
       </p>
       <p>
+        First Name
+        <input id="first-name" type="userName" />
+      </p>
+      <p>
         Password
         <input id="password" type="password" />
       </p>
@@ -33,9 +37,6 @@
     </div>
     <div id="logged-in">
       <p id="greeting"></p>
-      <p>
-        <button onclick="signOut();">Sign Out</button>
-      </p>
     </div>
     <script>
       var firebaseConfig = {
@@ -47,11 +48,13 @@
         messagingSenderId: "336176879404",
         appId: "1:336176879404:web:4b3080f52f9adb4d0f7e89"
       };
+      // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
 
       function signUp() {
         let email = document.getElementById('email-address').value;
         let password = document.getElementById('password').value;
+        let userName = document.getElementById('first-name').value;
 
         firebase.auth().createUserWithEmailAndPassword(email, password);
       }
@@ -62,12 +65,16 @@
 
         firebase.auth().signInUserWithEmailAndPassword(email, password);
       }
+      function uploadData(){
+        let element = document.getElementById( 'input' ).value;
+        firebase.firestore().collection('userName').add({
+          text: value,
+        });
+      }
 
-      firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-          alert('You are signed in! ' + user.uid);
-        }
-      })
+      function redirectHome() {
+
+      }
     </script>
   </body>
 </html>

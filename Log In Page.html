@@ -62,6 +62,14 @@
         window.location.href = './Homepage.html';
       }
 
+      <p>
+        <button onclick="signOut();">Sign Out</button>
+      </p>
+
+      function signOut() {
+      firebase.signOut(): promise<void>
+      }
+
       function signUp() {
         let email = document.getElementById('email-address').value;
         let password = document.getElementById('password').value;

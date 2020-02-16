@@ -16,6 +16,12 @@
     <p>
       <button onclick = "submit(); document.getElementById('invitee').value = ''">Submit</button>
     </p>
+    <p id ="listInvitees">
+      Invited Users<br>
+    </p>
+    <p>
+      <button onclick = "sendInvites()">Send Invites</button>
+    </p>
   </body>
   <script>
     var firebaseConfig = {
@@ -29,10 +35,16 @@
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
+    var invitedUsers = new Array();
     function submit() {
-
+      document.getElementById("listInvitees").innerHTML = document.getElementById("listInvitees").innerHTML  + "<br>"+ document.getElementById("invitee").value;
+      invitedUsers.push(document.getElementById("invitee").value);
     }
-
+    function sendInvites(){
+      document.getElementById("listInvitees").innerHTML = "";
+      //send Array Contents to Invitees
+      invitedUsers = new Array();
+    }
     //firebase.auth().currentUser.uid
   </script>
 </html>
